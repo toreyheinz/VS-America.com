@@ -41,3 +41,13 @@
 
 @include motion-ui-transitions;
 @include motion-ui-animations;
+
+header {
+  background-color: #B9134E;
+
+  .banner {
+    img {
+      height: rem-calc(125);
+    }
+  }
+}
