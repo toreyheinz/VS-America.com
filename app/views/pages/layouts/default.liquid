@@ -22,7 +22,7 @@ is_layout: true
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foundation for Sites</title>
+    <title>{{ page.title }} | VS America</title>
     {{ 'app.css' | stylesheet_tag }}
   </head>
   <body>
@@ -34,9 +34,7 @@ is_layout: true
     <div class="row">
       <div class="medium-3 column">
         {% link_to site.index %}
-        {% nav 'site' %}
-        <hr>
-        {% nav 'page' %}
+        {% nav 'site', depth: 2, active_class: 'is-active', id: 'sidebar-nav' %}
       </div>
       <div class="medium-9 column">
         <h1>{{ page.title }}</h1>
