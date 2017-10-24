@@ -26,9 +26,18 @@ is_layout: true
     {{ 'app.css' | stylesheet_tag }}
   </head>
   <body>
-    <header class="row">
-      <div class="banner">
-        {{ 'logo.png' | theme_image_tag }}
+    <header class="row collapse">
+      <div class="banner column medium-5 ">
+        {{ 'banner.png' | theme_image_tag }}
+      </div>
+      <div class="column medium-7 ">
+        {% comment %}{% nav 'site', active_class: 'is-active', id: 'top-menu' %}{% endcomment %}
+        <nav id="top-menu"><ul class="menu">
+<li id="why-castings-link" class="link"><a href="/why-castings">Why Castings?</a></li>
+<li id="material-choices-link" class="link"><a href="/material-choices">Material Choices</a></li>
+<li id="manufacturers-link" class="link"><a href="/manufacturers">Manufacturers</a></li>
+<li id="stock-items-link" class="link"><a href="/stock-items">Stock Items</a></li>
+<li id="applications-link" class="link last"><a href="/applications">Applications</a></li></ul></nav>
       </div>
     </header>
     <div class="row">
