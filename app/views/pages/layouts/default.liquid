@@ -9,6 +9,15 @@ is_layout: true
 <!doctype html>
 <html class="no-js" lang="en">
   <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{ 'favicon.ico' | theme_image_url }}">
+    <title>{{ page.title }} | VS America</title>
+
+    {{ 'app.css' | stylesheet_tag }}
+    <script src="https://use.fontawesome.com/2c75e31fa5.js"></script>
+
     <!-- Global Site Tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107293990-2"></script>
     <script>
@@ -18,34 +27,40 @@ is_layout: true
 
       gtag('config', 'UA-107293990-2');
     </script>
-
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title }} | VS America</title>
-    {{ 'app.css' | stylesheet_tag }}
   </head>
   <body>
-    <header class="row collapse">
-      <div class="banner column medium-5 ">
+    <header class="row collapse" data-equalizer data-equalize-on-stack=false>
+      <div class="banner column large-5" data-equalizer-watch>
         {{ 'banner.png' | theme_image_tag }}
       </div>
-      <div class="column medium-7 ">
+      <div class="menu-wrapper column large-7" data-equalizer-watch>
+        <p class="contact-info">
+          <i class="fa fa-phone fa-lg">&nbsp;</i><a href="tel:16169566800">(616) 956-6800</a>
+          &nbsp;
+          <i class="fa fa-envelope fa-lg">&nbsp;</i><a href="mailto:contact@vs-america.com">contact@vs-america.com</a>
+        </p>
         {% comment %}{% nav 'site', active_class: 'is-active', id: 'top-menu' %}{% endcomment %}
-        <nav id="top-menu"><ul class="menu">
-<li id="why-castings-link" class="link"><a href="/why-castings">Why Castings?</a></li>
-<li id="material-choices-link" class="link"><a href="/material-choices">Material Choices</a></li>
-<li id="manufacturers-link" class="link"><a href="/manufacturers">Manufacturers</a></li>
-<li id="stock-items-link" class="link"><a href="/stock-items">Stock Items</a></li>
-<li id="applications-link" class="link last"><a href="/applications">Applications</a></li></ul></nav>
+        <nav id="top-menu">
+          <ul class="menu">
+
+        <li class="link"><a href="/"><i class="fa fa-home fa-lg"></i>Home</a></li>
+        <li class="link"><a href="/why-castings">Why Castings?</a></li>
+        <li class="link"><a href="/history-of-vs-america">Company</a></li>
+        <li class="link last"><a href="#">Contact</a></li></ul></nav>
       </div>
+
     </header>
-    <div class="row">
-      <div class="medium-3 column">
+    <div id="main" class="row">
+      <div class="medium-3 column sidebar">
         {% link_to site.index %}
         {% nav 'site', depth: 2, active_class: 'is-active', id: 'sidebar-nav' %}
       </div>
       <div class="medium-9 column">
+        <ul class="breadcrumbs">
+          {% for item in page.breadcrumbs %}
+            <li>{% link_to item %}</li>
+          {% endfor %}
+        </ul>
         <h1>{{ page.title }}</h1>
         {% block 'main' %}
           {% editable_text "content" %}Hola!{% endeditable_text %}

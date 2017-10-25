@@ -43,11 +43,11 @@
 // 1. Global
 // ---------
 
-$global-width: rem-calc(1200);
-$global-font-size: 100%;
+$global-width: rem-calc(1000);
+$global-font-size: 17px;
 $global-lineheight: 1.5;
-$primary-color: #2199e8;
-$secondary-color: #777;
+$primary-color: #1A245B;
+$secondary-color: #494F9D;
 $success-color: #3adb76;
 $warning-color: #ffae00;
 $alert-color: #ec5840;
@@ -58,7 +58,7 @@ $black: #0a0a0a;
 $white: #fefefe;
 $body-background: $white;
 $body-font-color: $black;
-$body-font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+$body-font-family: "Malva", sans-serif;
 $body-antialiased: true;
 $text-direction: ltr;
 $global-margin: 1rem;
@@ -94,7 +94,7 @@ $block-grid-max: 6;
 // ------------------
 
 $header-font-family: $body-font-family;
-$header-font-weight: $global-weight-normal;
+$header-font-weight: $global-weight-bold;
 $header-font-style: normal;
 $font-family-monospace: Consolas, "Liberation Mono", Courier, monospace;
 $header-sizes: (
@@ -107,15 +107,15 @@ $header-sizes: (
     'h6': 16,
   ),
   medium: (
-    'h1': 48,
-    'h2': 40,
-    'h3': 31,
-    'h4': 25,
+    'h1': 40,
+    'h2': 32,
+    'h3': 24,
+    'h4': 20,
     'h5': 20,
     'h6': 16,
   ),
 );
-$header-color: inherit;
+$header-color: $primary-color;
 $header-lineheight: 1.4;
 $header-margin-bottom: 0.5rem;
 $header-text-rendering: optimizeLegibility;

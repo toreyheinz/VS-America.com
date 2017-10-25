@@ -3,3 +3,9 @@ production:
   handle: vs-america
   email: torey@teagles.io
   api_key: 688697709bb800280ffd38d5484b1f8bf8b9212d
+
+development:
+  host: http://cms.dev
+  handle: unsightly-sanctuary-9959
+  email: torey@teagles.io
+  api_key: d935dbe44cd303e463cd80f4a266acd03827bb0f
