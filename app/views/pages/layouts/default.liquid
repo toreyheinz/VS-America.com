@@ -11,7 +11,7 @@ is_layout: true
   <head>
     {% include 'metatags' %}
 
-    {{ 'app.css' | stylesheet_tag }}
+    {{ 'app.css' | stylesheet_tag(:all) }}
     <script src="https://use.fontawesome.com/2c75e31fa5.js"></script>
 
     <!-- Global Site Tag (gtag.js) - Google Analytics -->
@@ -46,9 +46,9 @@ is_layout: true
       </div>
 
     </header>
-    <div class="title-bar" data-responsive-toggle="sidebar-nav" data-hide-for="large">
+    <div class="row column title-bar" data-responsive-toggle="sidebar-nav" data-hide-for="large">
       <button class="menu-icon" type="button" data-toggle="sidebar-nav"></button>
-      <div class="contact-info float-right">
+      <div class="contact-info">
         <i class="fa fa-phone fa-lg">&nbsp;</i><a href="tel:16169566800">(616) 956-6800</a>
         &nbsp;
         <i class="fa fa-envelope fa-lg">&nbsp;</i><a href="mailto:contact@vs-america.com">contact@vs-america.com</a>

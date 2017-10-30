@@ -1,0 +1,22 @@
+@media print {
+  a, a:visited { text-decoration: underline;}
+  a[href]:after { content: ''; }
+
+  .menu-wrapper, .sidebar, .menu-icon {
+    display: none;
+  }
+
+  .banner {
+    // text-align: center;
+    img {
+      width: 250px
+    }
+  }
+
+  .title-bar {
+    .contact-info {
+      float: none;
+      text-align: left;
+    }
+  }
+}
