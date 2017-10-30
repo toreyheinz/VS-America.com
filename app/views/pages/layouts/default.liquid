@@ -33,12 +33,12 @@ is_layout: true
       <div class="banner column large-5" data-equalizer-watch>
         {{ 'banner.png' | theme_image_tag }}
       </div>
-      <div class="menu-wrapper column large-7" data-equalizer-watch>
-        <p class="contact-info">
+      <div class="menu-wrapper column large-7 show-for-large" data-equalizer-watch>
+        <div class="contact-info">
           <i class="fa fa-phone fa-lg">&nbsp;</i><a href="tel:16169566800">(616) 956-6800</a>
           &nbsp;
           <i class="fa fa-envelope fa-lg">&nbsp;</i><a href="mailto:contact@vs-america.com">contact@vs-america.com</a>
-        </p>
+        </div>
         {% comment %}{% nav 'site', active_class: 'is-active', id: 'top-menu' %}{% endcomment %}
         <nav id="top-menu">
           <ul class="menu">
@@ -50,12 +50,23 @@ is_layout: true
       </div>
 
     </header>
+    <div class="title-bar" data-responsive-toggle="sidebar-nav" data-hide-for="large">
+      <button class="menu-icon" type="button" data-toggle="sidebar-nav"></button>
+      <div class="title-bar-title">Menu</div>
+      <div class="contact-info float-right">
+        <i class="fa fa-phone fa-lg">&nbsp;</i><a href="tel:16169566800">(616) 956-6800</a>
+        &nbsp;
+        <i class="fa fa-envelope fa-lg">&nbsp;</i><a href="mailto:contact@vs-america.com">contact@vs-america.com</a>
+      </div>
+    </div>
     <div id="main" class="row">
-      <div class="medium-3 column sidebar">
-        {% link_to site.index %}
+      <div class="large-3 column sidebar">
+        <div class="show-for-large">
+          {% link_to site.index %}
+        </div>
         {% nav 'site', depth: 2, active_class: 'is-active', id: 'sidebar-nav' %}
       </div>
-      <div class="medium-9 column">
+      <div class="large-9 column">
         <ul class="breadcrumbs">
           {% for item in page.breadcrumbs %}
             <li>{% link_to item %}</li>
