@@ -9,11 +9,7 @@ is_layout: true
 <!doctype html>
 <html class="no-js" lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="{{ 'favicon.ico' | theme_image_url }}">
-    <title>{{ page.title }} | VS America</title>
+    {% include 'metatags' %}
 
     {{ 'app.css' | stylesheet_tag }}
     <script src="https://use.fontawesome.com/2c75e31fa5.js"></script>
@@ -52,7 +48,6 @@ is_layout: true
     </header>
     <div class="title-bar" data-responsive-toggle="sidebar-nav" data-hide-for="large">
       <button class="menu-icon" type="button" data-toggle="sidebar-nav"></button>
-      <div class="title-bar-title">Menu</div>
       <div class="contact-info float-right">
         <i class="fa fa-phone fa-lg">&nbsp;</i><a href="tel:16169566800">(616) 956-6800</a>
         &nbsp;
