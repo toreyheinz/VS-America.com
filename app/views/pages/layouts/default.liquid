@@ -3,79 +3,87 @@ title: Default
 slug: default
 position: 99
 listed: false
-published: true
+published: false
 is_layout: true
 ---
 <!doctype html>
 <html class="no-js" lang="en">
   <head>
     {% include 'metatags' %}
-
     {{ 'app.css' | stylesheet_tag(:all) }}
     <script src="https://use.fontawesome.com/2c75e31fa5.js"></script>
-
     <!-- Global Site Tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107293990-2"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments)};
       gtag('js', new Date());
-
       gtag('config', 'UA-107293990-2');
     </script>
   </head>
   <body>
-    <header class="row collapse" data-equalizer data-equalize-on-stack=false>
-      <div class="banner column large-5" data-equalizer-watch>
-        {{ 'banner.png' | theme_image_tag }}
-      </div>
-      <div class="menu-wrapper column large-7 show-for-large" data-equalizer-watch>
+    <div class="page-wrapper">
+      <header class="row collapse" data-equalizer data-equalize-on-stack=false>
+        <div class="banner column large-5" data-equalizer-watch>
+          {{ 'banner.png' | theme_image_tag }}
+        </div>
+        <div class="menu-wrapper column large-7 show-for-large" data-equalizer-watch>
+          <div class="contact-info">
+            <i class="fa fa-phone fa-lg">&nbsp;</i><a href="tel:16169566800">(616) 956-6800</a>
+            &nbsp;
+            <i class="fa fa-envelope fa-lg">&nbsp;</i><a href="mailto:contact@vs-america.com">contact@vs-america.com</a>
+          </div>
+          {% comment %}{% nav 'site', active_class: 'is-active', id: 'top-menu' %}{% endcomment %}
+          <nav id="top-menu">
+            <ul class="menu">
+          <li class="link"><a href="/"><i class="fa fa-home fa-lg"></i>Home</a></li>
+          <li class="link"><a href="/why-castings">Why Castings?</a></li>
+          <li class="link"><a href="/history-of-vs-america">Company</a></li>
+          <li class="link last"><a href="#">Contact</a></li></ul></nav>
+        </div>
+      </header>
+      <div class="row column title-bar hide-for-large" data-responsive-toggle="sidebar-nav" data-hide-for="large">
+        <button class="menu-icon" type="button" data-toggle="sidebar-nav"></button>
         <div class="contact-info">
           <i class="fa fa-phone fa-lg">&nbsp;</i><a href="tel:16169566800">(616) 956-6800</a>
           &nbsp;
           <i class="fa fa-envelope fa-lg">&nbsp;</i><a href="mailto:contact@vs-america.com">contact@vs-america.com</a>
         </div>
-        {% comment %}{% nav 'site', active_class: 'is-active', id: 'top-menu' %}{% endcomment %}
-        <nav id="top-menu">
-          <ul class="menu">
-
-        <li class="link"><a href="/"><i class="fa fa-home fa-lg"></i>Home</a></li>
-        <li class="link"><a href="/why-castings">Why Castings?</a></li>
-        <li class="link"><a href="/history-of-vs-america">Company</a></li>
-        <li class="link last"><a href="#">Contact</a></li></ul></nav>
       </div>
-
-    </header>
-    <div class="row column title-bar" data-responsive-toggle="sidebar-nav" data-hide-for="large">
-      <button class="menu-icon" type="button" data-toggle="sidebar-nav"></button>
-      <div class="contact-info">
-        <i class="fa fa-phone fa-lg">&nbsp;</i><a href="tel:16169566800">(616) 956-6800</a>
-        &nbsp;
-        <i class="fa fa-envelope fa-lg">&nbsp;</i><a href="mailto:contact@vs-america.com">contact@vs-america.com</a>
-      </div>
-    </div>
-    <div id="main" class="row">
-      <div class="large-3 column sidebar">
-        <div class="show-for-large">
-          {% link_to site.index %}
+      <div id="main" class="row">
+        <div class="large-3 column sidebar">
+          <div class="show-for-large">
+            {% link_to site.index %}
+          </div>
+          {% nav 'site', depth: 2, active_class: 'is-active', id: 'sidebar-nav' %}
         </div>
-        {% nav 'site', depth: 2, active_class: 'is-active', id: 'sidebar-nav' %}
+        <div class="large-9 column">
+          <ul class="breadcrumbs">
+            {% for item in page.breadcrumbs %}
+              <li>{% link_to item %}</li>
+            {% endfor %}
+          </ul>
+          <h1>{{ page.title }}</h1>
+          {% block 'main' %}
+            {% editable_text "content" %}Hola!{% endeditable_text %}
+          {% endblock %}
+        </div>
       </div>
-      <div class="large-9 column">
-        <ul class="breadcrumbs">
-          {% for item in page.breadcrumbs %}
-            <li>{% link_to item %}</li>
-          {% endfor %}
-        </ul>
-        <h1>{{ page.title }}</h1>
-        {% block 'main' %}
-          {% editable_text "content" %}Hola!{% endeditable_text %}
-        {% endblock %}
-      </div>
+      <footer class="row collapse">
+        <small>Copyright © 2005 VS America. All rights reserved. VS America is a subsidiary of VS Guss</small>
+      </footer>
     </div>
     <script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
     {{ 'vendor/what-input.min.js' | javascript_tag }}
     {{ 'vendor/foundation.min.js' | javascript_tag }}
     {{ 'app.js'                   | javascript_tag }}
+    <script>
+  (function() {
+    for(var c = document.getElementsByTagName("a"), a = 0;a < c.length;a++) {
+      var b = c[a];
+      b.getAttribute("href") && b.hostname !== location.hostname && (b.target = "_blank")
+    }
+  })();
+</script>
   </body>
 </html>
