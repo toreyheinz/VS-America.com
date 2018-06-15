@@ -9,9 +9,6 @@ is_layout: true
 <!doctype html>
 <html class="no-js" lang="en">
   <head>
-    {% include 'metatags' %}
-    {{ 'app.css' | stylesheet_tag(:all) }}
-    <script src="https://use.fontawesome.com/2c75e31fa5.js"></script>
     <!-- Global Site Tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107293990-2"></script>
     <script>
@@ -20,6 +17,10 @@ is_layout: true
       gtag('js', new Date());
       gtag('config', 'UA-107293990-2');
     </script>
+
+    {% include 'metatags' %}
+    {{ 'app.css' | stylesheet_tag(:all) }}
+    <script src="https://use.fontawesome.com/2c75e31fa5.js"></script>
   </head>
   <body>
     <div class="page-wrapper">
@@ -70,7 +71,7 @@ is_layout: true
         </div>
       </div>
       <footer class="row collapse">
-        <small>Copyright © 2005 VS America. All rights reserved. VS America is a subsidiary of VS Guss</small>
+        <small>Copyright ©{{ 'now' | date: "%Y" }} VS America. All rights reserved. VS America is a subsidiary of <a href="https://www.vsguss.de/en/">VS Guss<a></small>
       </footer>
     </div>
     <script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
