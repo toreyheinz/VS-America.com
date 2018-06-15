@@ -20,3 +20,24 @@ editable_elements:
     FATA / Peterle - Manufacturer of Foundry Equipment<div><br></div>'
 ---
 {% extends "layouts/default" %}
+{% block 'main' %}
+  {% if featured_image != blank %}
+    <div class="featured_image">
+      <img class="thumbnail" title="{{ page.title }}" alt="{{ page.title }}" src="{{ featured_image | resize: '400x', optimize: 80 }}">
+    </div>
+  {% endif %}
+  {% editable_text "content" %}Hola!{% endeditable_text %}
+  <p>foo</p>
+  <div class="row small-up-2 medium-up-3">
+    {% for link in contents.industry_links %}
+      <div class="column column-block  clickable" data-url="{{ link.url }}">
+        <div class="card text-center">
+          <img src="{{ link.logo.url | resize: '400x300#', optimize: 80 }}">
+          <p>
+            <a href="{{ link.url }}">{{ link.title }}</a>
+          </p>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}

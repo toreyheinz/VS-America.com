@@ -1,3 +1,5 @@
+//= require clickable
+
 $(document).foundation();
 
 $('nav#sidebar-nav > ul').addClass('vertical menu')
