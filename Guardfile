@@ -18,5 +18,5 @@ guard 'livereload', host: '0.0.0.0', port: ENV['WAGON_LIVERELOAD_PORT'] || 35729
   watch(%r{app/views/.+\.liquid})
   watch(%r{config/.+\.yml$})
   watch(%r{data/.+\.yml$})
-  watch(%r{public/((stylesheets|javascripts)/(.+\.(css|js))).*}) { |m| "/#{m[1]}" }
+  watch(%r{public/((stylesheets|javascripts)/(.+\.(scss|css|js))).*}) { |m| "/#{m[1]}" }
 end
