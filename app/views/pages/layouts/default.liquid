@@ -69,7 +69,7 @@ is_layout: true
           {% block 'main' %}
             {% if featured_image != blank %}
               <div class="featured_image">
-                <img class="thumbnail" title="{{ page.title }}" alt="{{ page.title }}" src="{{ featured_image | resize: '400x', optimize: 80 }}">
+                <img class="thumbnail" title="{{ page.title }}" alt="{{ page.title }}" src="{{ featured_image | resize: '400x>', optimize: 80 }}">
               </div>
             {% endif %}
             {% editable_text "content" %}Hola!{% endeditable_text %}
