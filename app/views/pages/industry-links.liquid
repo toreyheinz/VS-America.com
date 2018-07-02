@@ -27,12 +27,11 @@ editable_elements:
     </div>
   {% endif %}
   {% editable_text "content" %}Hola!{% endeditable_text %}
-  <p>foo</p>
   <div class="row small-up-2 medium-up-3">
     {% for link in contents.industry_links %}
       <div class="column column-block  clickable" data-url="{{ link.url }}">
         <div class="card text-center">
-          <img src="{{ link.logo.url | resize: '400x300#', optimize: 80 }}">
+          <img class="thumbnail" alt="{{ link.title }}" src="{{ link.logo.url | resize: '400x300', optimize: 80 }}">
           <p>
             <a href="{{ link.url }}">{{ link.title }}</a>
           </p>
